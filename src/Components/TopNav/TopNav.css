@@ -33,3 +33,17 @@ h1{
     color: white;
     font-size: 1.5em
 }
+@media(max-width: 415px){
+    .Main-Container{
+        height: 8vh;
+    }
+    .Link-Container{
+        width:60vw;
+    }
+    .Link-Container a{
+        font-size: 1em
+    }
+    .Logout{
+        font-size: 1em;
+    }
+}

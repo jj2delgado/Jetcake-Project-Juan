@@ -5,3 +5,12 @@
     height: 150vh;
     width: 100vw;
 }
+
+@media(max-width: 415px){
+    .Hero-Container{
+        background-image: url('https://images.unsplash.com/photo-1490299585466-5b2c9073b204?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80');
+        background-size: cover;
+        height: 80vh;
+        width: 100vw;
+    }
+}

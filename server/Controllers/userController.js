@@ -59,9 +59,9 @@ module.exports = {
     //functionality to allow user to update first name, last name, and dob
     async editUserPersonal(req, res){
         let {id} = req.params
-        let {name_first, name_last, date_of_birth} = req.body
+        let {name_first, name_last, phone_number, street_address, city, us_state, zipcode, email, profile_pic, date_of_birth, password, first_security_answer, second_security_answer, third_security_answer} = req.body
         const db = req.app.get('db')
-        let result = await db.edit_user_personal_info([+id, name_first, name_last, date_of_birth])
+        let result = await db.edit_user_personal_info([+id, name_first, name_last, phone_number, street_address, city, us_state, zipcode, email, profile_pic, date_of_birth, password, first_security_answer, second_security_answer, third_security_answer])
         res.send(result)
     },
     //functionality to allow user to update profile pic

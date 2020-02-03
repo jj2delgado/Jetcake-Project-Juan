@@ -24,7 +24,8 @@ class RegisterLogin extends Component{
             second_security_answer: '',
             third_security_answer: '',
             email_login:'',
-            password_login:''
+            password_login:'',
+            field_error: false
         }
     }
 
@@ -33,9 +34,19 @@ class RegisterLogin extends Component{
         this.setState({ [name]:value})
     }
 
+    flipError = () => {
+        this.setState({field_error: !this.state.field_error})
+    }
+
     registerUser = () => {
-        this.props.Register(this.state.name_first, this.state.name_last, this.state.phone_number, this.state.password, this.state.street_address, this.state.city, this.state.us_state, this.state.zipcode, this.state.email, this.state.profile_pic, this.state.date_of_birth, this.state.first_security_answer, this.state.second_security_answer, this.state.third_security_answer)
-        this.setState({name_first:'', name_last:'', phone_number:'', password:'', street_address:'', city:'', us_state:'', zipcode:'', email:'', profile_pic:'', date_of_birth:'', first_security_answer:'', second_security_answer:'', third_security_answer:''})
+        if(this.state.name_first === '' || this.state.name_last === '' || this.state.phone_number === '' || this.state.password === '' || this.state.street_address === '' || this.state.city === '' || this.state.us_state === '' || this.state.zipcode === '' || this.state.email === '' || this.state.profile_pic === '' || this.state.date_of_birth === '' || this.state.first_security_answer === '' || this.state.second_security_answer === '' || this.state.third_security_answer === ''){
+            this.flipError()
+        }
+        else{
+            this.props.Register(this.state.name_first, this.state.name_last, this.state.phone_number, this.state.password, this.state.street_address, this.state.city, this.state.us_state, this.state.zipcode, this.state.email, this.state.profile_pic, this.state.date_of_birth, this.state.first_security_answer, this.state.second_security_answer, this.state.third_security_answer)
+            this.setState({name_first:'', name_last:'', phone_number:'', password:'', street_address:'', city:'', us_state:'', zipcode:'', email:'', profile_pic:'', date_of_birth:'', first_security_answer:'', second_security_answer:'', third_security_answer:''})
+        }
+        
     }
 
     loginUser = () => {
@@ -45,16 +56,23 @@ class RegisterLogin extends Component{
 
     render(){
         let {user} = this.props
-        let {name_first, name_last, phone_number, password, street_address, city, us_state, zipcode, email, profile_pic, date_of_birth, first_security_answer, second_security_answer, third_security_answer, email_login, password_login} = this.state
+        let {name_first, name_last, phone_number, password, street_address, city, us_state, zipcode, email, profile_pic, date_of_birth, first_security_answer, second_security_answer, third_security_answer, email_login, password_login, field_error} = this.state
         if (user.loggedIn) return <Redirect to='/'/>
         return(
             <div className='RegLog-Container'>
                 <TopNav />
                 <div className='RegLog-Hero-Container'>
+                    <div className="RegLog-Center"></div>
+                <div className="RegLog-Sub-Container">
                 <div className='Register-Container'>
                     <div className='spacer'></div>
                     <h1>Not a Member? Register Here</h1>
                     <h6>*All Fields are required*</h6>
+                    {field_error ? (
+                        <h1>You must enter in all of the fields to register an account</h1>
+                    ):(
+                        <div className="Empty-Conditional"/>
+                    )}
                     <div>
                         <div>
                         <input placeholder="First Name" value={name_first} name='name_first' onChange={this.handleChange}></input>
@@ -99,7 +117,7 @@ class RegisterLogin extends Component{
                         </div>
 
                         <button className='Register-Button' onClick={this.registerUser}>
-                            <Link to='/'>Register</Link>
+                            Register
                         </button>
                     </div>
                 </div>
@@ -119,6 +137,7 @@ class RegisterLogin extends Component{
                     <button className='Login-Button' onClick={this.loginUser}>
                         <Link to='/'>Login</Link>
                     </button>
+                </div>
                 </div>
                 </div>
             </div>

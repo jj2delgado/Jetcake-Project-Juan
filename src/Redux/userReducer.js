@@ -32,8 +32,8 @@ export const Logout = () => {
     }
 }
 
-export const EditUserPersonal = (id, name_first, name_last, date_of_birth) => {
-    let data = axios.put(`/api/editUser/personal/${id}`, {name_first, name_last, date_of_birth})
+export const EditUserPersonal = (id, name_first, name_last, phone_number, street_address, city, us_state, zipcode, email, profile_pic, date_of_birth, password, first_security_answer, second_security_answer, third_security_answer) => {
+    let data = axios.put(`/api/editUser/personal/${id}`, {name_first, name_last, phone_number, street_address, city, us_state, zipcode, email, profile_pic, date_of_birth, password, first_security_answer, second_security_answer, third_security_answer})
     .then(res => res.data)
     return{
         type: EDIT_USER_PERSONAL,

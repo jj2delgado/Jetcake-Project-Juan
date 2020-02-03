@@ -28,3 +28,27 @@
     flex-direction: column;
     align-items: center;
 }
+.Empty-Conditional{
+    display: none;
+}
+.RegLog-Sub-Container{
+    display: flex;
+}
+.RegLog-Center{
+    width: 25vw;
+}
+@media(max-width: 415px){
+    .RegLog-Hero-Container{
+        background-image: url('https://images.unsplash.com/photo-1490299501812-a0852e08dd90?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80');
+        background-size: cover;
+        height: 100vh;
+        width: 100vw;
+    }
+    .spacer{
+        height: 40%;
+    }
+    .Register-Container{
+        position: relative;
+        top: 20%;
+    }
+}

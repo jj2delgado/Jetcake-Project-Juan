@@ -1,0 +1,40 @@
+.Profile-Container{
+    background-image: url('https://images.unsplash.com/photo-1503669678209-c68d00b3765d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    height: 150vh;
+    width: 100vw;
+    top: 0px;
+    background-size: cover;
+    display: flex;
+}
+.Profile-Info-Container p{
+    color: white;
+}
+.Profile-Spacer{
+    height: 20vh;
+}
+.Edit-Container{
+    display: flex;
+}
+.Edit-Center{
+    width: 30vw;
+    height: 10vh;
+}
+.Profile-Info-Center{
+    width: 20vw;
+    height: 10vh;
+}
+.Profile-Info-Container{
+    display: flex;
+}
+.Edit-Sub-Container p{
+    color: white;
+}
+
+@media(max-width: 415px){
+    .Profile-Container{
+        background-image: url('https://images.unsplash.com/photo-1490299585466-5b2c9073b204?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80');
+        background-size: cover;
+        height: 100vh;
+        width: 100vw;
+    }
+}
