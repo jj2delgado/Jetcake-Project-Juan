@@ -28,7 +28,7 @@ module.exports = {
         const db = req.app.get('db')
         //check to see if correct password and email are entered
         let [existingUser] = await db.get_user_by_email(email)
-        if(!existinUser) return res.status(401).send('Email not found')
+        if(!existingUser) return res.status(401).send('Email not found')
 
         let result = await bcrypt.compare(password, existingUser.password)
         if (result){

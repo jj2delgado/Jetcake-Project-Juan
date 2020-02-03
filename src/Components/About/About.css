@@ -1,0 +1,12 @@
+.About-Container{
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.About-Paragraph{
+    color: black;
+}
+.About-Title{
+    color: black;
+}

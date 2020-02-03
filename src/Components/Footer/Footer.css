@@ -1,0 +1,15 @@
+.Footer-Container{
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #202020
+}
+.Footer-Container a{
+    text-decoration: none;
+    color: white
+}
+.Footer-Container p{
+    color: white;
+}
