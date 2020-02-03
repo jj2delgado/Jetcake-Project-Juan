@@ -40,3 +40,5 @@ npm start
 nodemon
 
 nodemon for backend and npm start for front end
+
+I used Visual Studio Code, with terminal command create-react-app to create the base for this site.
